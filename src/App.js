@@ -1,23 +1,23 @@
-import React from 'react';
+import React,{useState} from 'react';
 import axios from 'axios';
 import './App.css';
 
 function App() {
-  const [movie,setMovie] = React.useState("")
-   const [data,setData] = React.useState([])
-  async function handleClick (){
+  const [movie,setMovie] = useState("")
+   const [data,setData] = useState([])
+  const  handleClick = async()=>{
    let res = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_auitn2qs/${movie}`)
   
     setData( res.data.results)
   }
   return (
     <div className="App">
-     {/* <Title /> */}
+     
      <div className="header-wrapper">
      <h1>Getting Movies and shows</h1>
      </div>
      <div className='main-wrapper'>
-     <input type="text" placeholder='Enter Movie Name' className='form' value={movie} 
+     <input type="text" placeholder='Enter Movie Name'  value={movie} 
       onChange={(event)=>{
         setMovie(event.target.value)  
       }}/>
