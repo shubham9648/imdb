@@ -39,6 +39,7 @@ button{
     padding-right: 20px;
     background-color: rgb(20, 24, 24);
     color: white;
+    border-radius: 8px;
 }
 .img-wrapper{
     display: flex;
@@ -49,7 +50,7 @@ button{
     display:flex;
     flex-direction: column;
     border: 2px solid red;
-    margin: 2rem;
+    margin: 1.2rem;
     align-items:center;
     background-color: rebeccapurple;
     /* grid-template-columns: repeat(auto-fill,minmax(300px,2fr)); */
@@ -58,4 +59,11 @@ button{
 p{
     color: white;
 }
-@media
+@media screen and (max-width:480px){
+  .container{
+      margin-top: 2rem;
+  }
+  h1{
+      font-size: 1.5rem;
+  }
+}

@@ -4,7 +4,6 @@ import './App.css';
 
 function App() {
   const [movie,setMovie] = React.useState("")
-  const [id,setId] = React.useState()
    const [data,setData] = React.useState([])
   async function handleClick (){
    let res = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_auitn2qs/${movie}`)
