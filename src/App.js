@@ -1,24 +1,16 @@
 import React from 'react';
 import axios from 'axios';
 import './App.css';
-import Title from './Title';
+
 function App() {
-  const [movie,setMovie] = React.useState("baahubali")
+  const [movie,setMovie] = React.useState("")
   const [id,setId] = React.useState()
    const [data,setData] = React.useState([])
   async function handleClick (){
    let res = await axios.get(`https://imdb-api.com/en/API/SearchMovie/k_auitn2qs/${movie}`)
-    //  console.log(res.data.results.id)
-    
+  
     setData( res.data.results)
-    // console.log(data.id)
-    // setId((elem)=>{
-      
-    // })
   }
-  // handleClick()
-  // console.log(data)
-  // console.log(id)
   return (
     <div className="App">
      {/* <Title /> */}
@@ -26,7 +18,7 @@ function App() {
      <h1>Getting Movies and shows</h1>
      </div>
      <div className='main-wrapper'>
-     <input type="text" className='form' value={movie} 
+     <input type="text" placeholder='Enter Movie Name' className='form' value={movie} 
       onChange={(event)=>{
         setMovie(event.target.value)  
       }}/>
@@ -45,7 +37,7 @@ function App() {
         })
       }
       </div>
-     {/* <Title title={data.data}/> */}
+  
     </div>
     </div>
   );
